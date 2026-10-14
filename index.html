@@ -30,7 +30,8 @@
   #class-dialog h2 { font-size:clamp(2rem, 8vw, 2.8rem); line-height:1.15; }
   #class-dialog select { font-family:"Avenir Next","Segoe UI",sans-serif; font-size:1.2rem; min-height:56px; width:min(16rem, 100%); margin-top:22px; padding:0 16px; border:1px solid #d7d7d7; border-radius:14px; background:#f6f7f9; color:var(--ink); }
   #class-dialog select:focus { outline:2px solid #1d4ed8; outline-offset:2px; }
-  #class-dialog .close { position:absolute; top:16px; right:16px; }
+  .current-class { margin:16px 0 4px; font-size:1.15rem; }
+  .change-class { background:none; border:0; padding:0; margin:0 0 18px; font:inherit; font-size:1.05rem; color:#1d4ed8; text-decoration:none; cursor:pointer; }
   .note { font-size:.92rem; margin-top:12px; }
   .session-h { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
   .session-h h2 { margin:20px 0 0; }
@@ -97,6 +98,8 @@
 </div></div>
 <main><div class="wrap">
 <section class="panel on" id="overview">
+  <p class="current-class" id="current-class" hidden></p>
+  <button type="button" class="change-class" id="change-class">Change class</button>
   <div class="venues-key">
     <article class="key vex"><h3><button type="button" class="course-link" data-course="vex">VEX</button></h3><p>This workshop is in the Hall. Your whole group stays together. The Hall holds 180 students.</p></article>
     <article class="key swift"><h3><button type="button" class="course-link" data-course="swift">Swift</button></h3><p>This workshop is in the Lecture Theatre, Room 502 and Room 503. The theatre holds 120. Each room holds 30.</p></article>
@@ -626,17 +629,37 @@ function showWhere(code) {
 whereDialog.addEventListener("click", event => { if (event.target === whereDialog) whereDialog.close(); });
 whereDialog.addEventListener("close", () => clearInterval(whereTimer));
 const classDialog = document.getElementById("class-dialog");
-classDialog.addEventListener("cancel", event => event.preventDefault());
-classDialog.showModal();
+const currentClass = document.getElementById("current-class");
+const savedClassKey = "inno-day-class";
+function savedClass() {
+  const code = localStorage.getItem(savedClassKey);
+  return code && classGroup[code] ? code : "";
+}
+function applyClass(code) {
+  localStorage.setItem(savedClassKey, code);
+  classPick.value = code;
+  currentClass.hidden = false;
+  currentClass.textContent = "Your class is " + code + ".";
+  const place = isInnoDay() ? placeFor(code) : { id:"s1" };
+  highlightClass(code);
+  show(place.id);
+  history.replaceState(null, "", "#" + place.id);
+  showWhere(code);
+  document.querySelector("#" + place.id + " .chip.mine")?.scrollIntoView({ block:"center" });
+}
+classDialog.addEventListener("cancel", event => {
+  if (!savedClass()) event.preventDefault();
+});
+classDialog.addEventListener("click", event => {
+  if (event.target === classDialog && savedClass()) classDialog.close();
+});
+document.getElementById("change-class").addEventListener("click", () => classDialog.showModal());
+if (savedClass()) applyClass(savedClass());
+else classDialog.showModal();
 classPick.addEventListener("change", () => {
   if (!classPick.value) return;
   classDialog.close();
-  const place = isInnoDay() ? placeFor(classPick.value) : { id:"s1" };
-  highlightClass(classPick.value);
-  show(place.id);
-  history.replaceState(null, "", "#" + place.id);
-  showWhere(classPick.value);
-  document.querySelector("#" + place.id + " .chip.mine")?.scrollIntoView({ block:"center" });
+  applyClass(classPick.value);
 });
 
 const courses = {
