@@ -28,7 +28,7 @@
   .chip.mine, .chip.mine b { background:#1d4ed8; color:#fff; border-color:#1d4ed8; }
   #class-dialog { width:min(26rem, calc(100% - 28px)); padding:36px 28px 32px; text-align:center; }
   #class-dialog h2 { font-size:clamp(2rem, 8vw, 2.8rem); line-height:1.15; }
-  #class-dialog select { font-family:"Avenir Next","Segoe UI",sans-serif; font-size:1.2rem; min-height:56px; width:min(16rem, 100%); margin-top:22px; padding:0 16px; border:1px solid #d7d7d7; border-radius:14px; background:#f6f7f9; color:var(--ink); }
+  #class-dialog select { font-family:"Avenir Next","Segoe UI",sans-serif; font-size:1.2rem; min-height:56px; width:min(16rem, 100%); margin-top:22px; padding:0 16px; border:1px solid #d7d7d7; border-radius:12px; }
   #class-dialog select:focus { outline:2px solid #1d4ed8; outline-offset:2px; }
   .current-class { margin:16px 0 4px; font-size:1.15rem; }
   .change-class { background:none; border:0; padding:0; margin:0 0 18px; font:inherit; font-size:1.05rem; color:#1d4ed8; text-decoration:none; cursor:pointer; }
@@ -101,10 +101,10 @@
   <p class="current-class" id="current-class" hidden></p>
   <button type="button" class="change-class" id="change-class">Change class</button>
   <div class="venues-key">
-    <article class="key vex"><h3><button type="button" class="course-link" data-course="vex">VEX</button></h3><p>This workshop is in the Hall. Your whole group stays together. The Hall holds 180 students.</p></article>
-    <article class="key swift"><h3><button type="button" class="course-link" data-course="swift">Swift</button></h3><p>This workshop is in the Lecture Theatre, Room 502 and Room 503. The theatre holds 120. Each room holds 30.</p></article>
-    <article class="key ar"><h3><button type="button" class="course-link" data-course="ar">AR and 3D</button></h3><p>This workshop is in Rooms 601, 602, 603, 604, 605 and 606. Each room holds 30 students.</p></article>
-    <article class="key llm"><h3><button type="button" class="course-link" data-course="llm">Language models</button></h3><p>This workshop is in Rooms 701, 702, 703, 704, 705 and 706. Each room holds 30 students.</p></article>
+    <article class="key vex"><h3><button type="button" class="course-link" data-course="vex">VEX</button></h3><p>This workshop is in the Hall. Your whole group stays together. The Hall holds 180 people.</p></article>
+    <article class="key swift"><h3><button type="button" class="course-link" data-course="swift">Swift</button></h3><p>This workshop is in the Lecture Theatre, Room 502 and Room 503. The theatre holds 120, and the smaller rooms hold 30 each.</p></article>
+    <article class="key ar"><h3><button type="button" class="course-link" data-course="ar">AR and 3D</button></h3><p>This workshop is in Rooms 601, 602, 603, 604, 605 and 606. Each room holds 30 people.</p></article>
+    <article class="key llm"><h3><button type="button" class="course-link" data-course="llm">Language models</button></h3><p>This workshop is in Rooms 701, 702, 703, 704, 705 and 706. Each room holds 30 people.</p></article>
   </div>
 </section>
 <section class="session panel" id="s1">
@@ -117,7 +117,7 @@
       </header>
       <div class="place main">
       <div class="place-h"><span>Hall</span><b>159</b><span class="cap">/ 180</span></div>
-      <div class="chips"><span class="chip"><b>7AJ</b> 27</span><span class="chip"><b>7AL</b> 29</span><span class="chip"><b>7KS</b> 28</span><span class="chip"><b>7NR</b> 28</span><span class="chip"><b>7NS</b> 28</span><span class="chip"><b>10C1</b> 19</span></div>
+      <div class="chips"><span class="chip"><b>7AJ</b> 27</span><span class="chip"><b>7AL</b> 29</span><span class="chip"><b>7KS</b> 28</span><span class="chip"><b>7NR</b> 28</span><span class="chip"><b>7NS</b> 28</span><span class="chip"><b>8AE</b> 19</span></div>
     </div>
     </article>
 <article class="venue swift">
@@ -212,7 +212,7 @@
       </header>
       <div class="place main">
       <div class="place-h"><span>Hall</span><b>159</b><span class="cap">/ 180</span></div>
-      <div class="chips"><span class="chip"><b>8AE</b> 26</span><span class="chip"><b>8AJ</b> 26</span><span class="chip"><b>8CW</b> 26</span><span class="chip"><b>8JE</b> 27</span><span class="chip"><b>8EJ</b> 27</span><span class="chip"><b>10M1</b> 20</span><span class="chip"><b>10S2</b> 7</span></div>
+      <div class="chips"><span class="chip"><b>8AE</b> 26</span><span class="chip"><b>8AJ</b> 26</span><span class="chip"><b>8CW</b> 26</span><span class="chip"><b>8JE</b> 27</span><span class="chip"><b>8EJ</b> 27</span><span class="chip"><b>9RR</b> 27</span></div>
     </div>
     </article>
 <article class="venue swift">
@@ -318,7 +318,7 @@
       </header>
       <div class="place main">
       <div class="place-h"><span>Lecture theatre</span><b>120</b><span class="cap">/ 120</span></div>
-      <div class="chips"><span class="chip"><b>11C1</b> 15</span><span class="chip"><b>11M1</b> 16</span><span class="chip"><b>11R1</b> 12</span><span class="chip"><b>11S1</b> 13</span><span class="chip"><b>11C2</b> 12</span><span class="chip"><b>11M2</b> 12</span><span class="chip"><b>11R2</b> 14</span><span class="chip"><b>11S2</b> 12</span><span class="chip"><b>10C2</b> 14</span></div>
+      <div class="chips"><span class="chip"><b>11C1</b> 15</span><span class="chip"><b>11M1</b> 16</span><span class="chip"><b>11R1</b> 12</span><span class="chip"><b>11S1</b> 13</span><span class="chip"><b>10M1</b> 20</span><span class="chip"><b>10S2</b> 7</span><span class="chip"><b>10R1</b> 17</span><span class="chip"><b>11S2</b> 12</span></div>
     </div>
 <div class="place ">
       <div class="place-h"><span>502</span><b>29</b><span class="cap">/ 30</span></div>
@@ -402,7 +402,7 @@
       </header>
       <div class="place main">
       <div class="place-h"><span>Hall</span><b>164</b><span class="cap">/ 180</span></div>
-      <div class="chips"><span class="chip"><b>11C1</b> 15</span><span class="chip"><b>11M1</b> 16</span><span class="chip"><b>11R1</b> 12</span><span class="chip"><b>11S1</b> 13</span><span class="chip"><b>11C2</b> 12</span><span class="chip"><b>11M2</b> 12</span><span class="chip"><b>11R2</b> 14</span><span class="chip"><b>11S2</b> 12</span><span class="chip"><b>10C2</b> 14</span><span class="chip"><b>10M2</b> 12</span><span class="chip"><b>10R1</b> 17</span><span class="chip"><b>10R2</b> 15</span></div>
+      <div class="chips"><span class="chip"><b>11C1</b> 15</span><span class="chip"><b>11M1</b> 16</span><span class="chip"><b>11R1</b> 12</span><span class="chip"><b>11S1</b> 13</span><span class="chip"><b>11C2</b> 12</span><span class="chip"><b>11M2</b> 12</span><span class="chip"><b>11R2</b> 14</span><span class="chip"><b>11S2</b> 12</span><span class="chip"><b>10C2</b> 14</span><span class="chip"><b>10M2</b> 12</span><span class="chip"><b>10R1</b> 17</span><span class="chip"><b>10R2</b> 15</span><span class="chip"><b>10M1</b> 20</span><span class="chip"><b>10S1</b> 24</span></div>
     </div>
     </article>
 <article class="venue swift">
@@ -412,8 +412,8 @@
         <p class="where">Lecture theatre · max 120, plus 502 and 503</p>
       </header>
       <div class="place main">
-      <div class="place-h"><span>Lecture theatre</span><b>113</b><span class="cap">/ 120</span></div>
-      <div class="chips"><span class="chip"><b>7AL</b> 29</span><span class="chip"><b>7KS</b> 28</span><span class="chip"><b>7NR</b> 28</span><span class="chip"><b>7NS</b> 28</span></div>
+      <div class="place-h"><span>Lecture theatre</span><b>85</b><span class="cap">/ 120</span></div>
+      <div class="chips"><span class="chip"><b>7AL</b> 29</span><span class="chip"><b>7KS</b> 28</span><span class="chip"><b>7NS</b> 28</span><span class="chip"><b>Swimming lesson</b></span></div>
     </div>
 <div class="place ">
       <div class="place-h"><span>502</span><b>27</b><span class="cap">/ 30</span></div>
@@ -462,8 +462,8 @@
         <p class="where">Rooms 701–706 · 30 each</p>
       </header>
       <div class="place ">
-      <div class="place-h"><span>701</span><b>28</b><span class="cap">/ 30</span></div>
-      <div class="chips"><span class="chip"><b>9GK</b> 28</span></div>
+      <div class="place-h"><span>701</span><b>0</b><span class="cap">/ 30</span></div>
+      <div class="chips"><span class="chip"><b>Swimming lesson</b></span></div>
     </div>
 <div class="place ">
       <div class="place-h"><span>702</span><b>28</b><span class="cap">/ 30</span></div>
@@ -551,7 +551,8 @@ const workshops = {
   vex: ["VEX", "the Hall"],
   swift: ["Swift", "the Lecture Theatre"],
   ar: ["AR and 3D", "Rooms 601 to 606"],
-  llm: ["Language models", "Rooms 701 to 706"]
+  llm: ["Language models", "Rooms 701 to 706"],
+  swimming: ["Swimming lesson", "the pool"]
 };
 const blocks = [
   { id:"s1", start:[9,0], end:[10,15], at:{ A:"vex", B:"swift", C:"ar", D:"llm" } },
@@ -579,8 +580,13 @@ function minutesNow() {
 }
 function atMinutes(pair) { return pair[0] * 60 + pair[1]; }
 function placeFor(code) {
-  const group = classGroup[code];
   const now = minutesNow();
+  if (code === "7NR" || code === "9GK") {
+    if (now >= atMinutes([14,15]) && now < atMinutes([15,30])) return { mode:"now", id:"s4", workshop:"swimming" };
+    if (now < atMinutes([14,15])) return { mode:"soon", id:"s4", workshop:"swimming", until:atMinutes([14,15]) };
+    return { mode:"done", id:"s4", workshop:"swimming" };
+  }
+  const group = classGroup[code];
   for (const block of blocks) {
     if (now >= atMinutes(block.start) && now < atMinutes(block.end)) {
       return { mode:"now", id:block.id, workshop:block.at[group] };
@@ -615,13 +621,23 @@ function showWhere(code) {
     return;
   }
   const place = placeFor(code);
-  const [workshop, venue] = workshops[place.workshop];
-  if (place.mode === "now") {
-    whereLine.textContent = code + " is having " + workshop + " at " + venue + ".";
-  } else if (place.mode === "soon") {
-    whereLine.textContent = code + " will be having " + workshop + " at " + venue + " in " + countdown(place.until) + ".";
+  if (place.workshop === "swimming") {
+    if (place.mode === "now") {
+      whereLine.textContent = code + " is at the swimming lesson.";
+    } else if (place.mode === "soon") {
+      whereLine.textContent = code + " will be at the swimming lesson in " + countdown(place.until) + ".";
+    } else {
+      whereLine.textContent = "The workshops have finished. " + code + " was at the swimming lesson.";
+    }
   } else {
-    whereLine.textContent = "The workshops have finished. " + code + " was at " + workshop + " in " + venue + ".";
+    const [workshop, venue] = workshops[place.workshop];
+    if (place.mode === "now") {
+      whereLine.textContent = code + " is having " + workshop + " at " + venue + ".";
+    } else if (place.mode === "soon") {
+      whereLine.textContent = code + " will be having " + workshop + " at " + venue + " in " + countdown(place.until) + ".";
+    } else {
+      whereLine.textContent = "The workshops have finished. " + code + " was at " + workshop + " in " + venue + ".";
+    }
   }
   if (!whereDialog.open) whereDialog.showModal();
   if (place.mode === "soon") whereTimer = setInterval(() => showWhere(code), 1000);
@@ -718,7 +734,7 @@ const courses = {
     flow: [
       ["Read two short pieces of writing.", "Which was written by a person? Which was written by AI?", "What made you decide?"],
       ["You may already meet this kind of AI when you write, or when you learn a language.", "Why can it sound sure about something that is not true?"],
-      ["Tell the AI who to be. Then give it a job.", "For example: “You are a friendly English teacher. Help me correct this sentence.”", "Write a short adventure of about 200 words together.", "Slip in one fact you know is wrong. What does the AI do with it?"],
+      ["Tell the AI who to be. Then give it a job.", "For example: “You are a friendly English teacher. Help me correct this sentence.”", "Write a short adventure of about 200 words together."],
       ["Is AI always right?", "What would you check before you trusted an answer?"]
     ]
   }
